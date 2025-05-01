@@ -1,14 +1,9 @@
 import streamlit as st
 import spacy
-from spacy.cli import download
 from spacy import displacy
 
-# Try loading the spaCy model, if it fails, download the model
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
+# Load spaCy model
+nlp = spacy.load("en_core_web_sm")
 
 # Set up the app title and layout
 st.set_page_config(page_title="NLP with spaCy", page_icon="🔍", layout="wide")
